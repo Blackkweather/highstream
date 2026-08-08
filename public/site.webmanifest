@@ -1,0 +1,13 @@
+{
+  "name": "HighStream — Premium IPTV",
+  "short_name": "HighStream",
+  "description": "Premium IPTV with 35,000+ channels and 120,000+ movies in 4K.",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "theme_color": "#05080f",
+  "background_color": "#05080f",
+  "display": "standalone",
+  "start_url": "/"
+}
