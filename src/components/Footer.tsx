@@ -12,7 +12,6 @@ const getFooterLinks = (t: (key: string) => string) => ({
     { label: t('nav.contact'), href: "/contact" },
     { label: t('nav.whatsapp'), href: openWhatsApp },
     { label: t('nav.telegram'), href: openTelegram },
-    // { label: "Email Support", href: "mailto:support@geniustv.com" }
   ],
   company: [
     { label: t('nav.aboutUs'), href: "/about" },

@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.geniustv.store/sitemap.xml
+Sitemap: https://highstream.vercel.app/sitemap.xml
