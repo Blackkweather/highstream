@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import IntroOverlay from "@/components/IntroOverlay";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { useEffect, lazy, Suspense } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -51,22 +52,24 @@ const AppContent = () =>  {
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Suspense fallback={<RouteFallback />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/reseller" element={<Reseller />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/apps" element={<Apps />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/installation" element={<Installation />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<RouteFallback />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/reseller" element={<Reseller />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/apps" element={<Apps />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/installation" element={<Installation />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
       </BrowserRouter>
     </div>
   );
