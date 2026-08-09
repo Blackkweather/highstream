@@ -1,18 +1,18 @@
 import { useState, useRef, useEffect } from "react";
 
 const logos = [
-    "/Posters/Champions-league.webp",
-    "/Posters/NFL.webp",
-    "/Posters/Jordan.webp",
-    "/Posters/premier-league.png",
-    "/Posters/UFC.webp",
-    "/Posters/Netflix.webp",
-    "/Posters/House-of-dragon.webp",
-    "/Posters/Squid-game.webp",
-    "/Posters/The-witcher.webp",
-    "/Posters/Carry-on.webp",
-    "/Posters/James-Lebron.webp",
-    "/Posters/Messi-Lamin-yamal.webp",
+    { src: "/Posters/Champions-league.webp", name: "UEFA Champions League" },
+    { src: "/Posters/NFL.webp", name: "NFL" },
+    { src: "/Posters/Jordan.webp", name: "NBA classics" },
+    { src: "/Posters/premier-league.png", name: "Premier League" },
+    { src: "/Posters/UFC.webp", name: "UFC" },
+    { src: "/Posters/Netflix.webp", name: "Netflix originals" },
+    { src: "/Posters/House-of-dragon.webp", name: "House of the Dragon" },
+    { src: "/Posters/Squid-game.webp", name: "Squid Game" },
+    { src: "/Posters/The-witcher.webp", name: "The Witcher" },
+    { src: "/Posters/Carry-on.webp", name: "Carry-On" },
+    { src: "/Posters/James-Lebron.webp", name: "NBA — LeBron James" },
+    { src: "/Posters/Messi-Lamin-yamal.webp", name: "Football — Messi & Lamine Yamal" },
 ];
 
 export const PostersCarousel = () => {
@@ -22,8 +22,10 @@ export const PostersCarousel = () => {
     const [scrollLeft, setScrollLeft] = useState(0);
     const containerRef = useRef(null);
 
-    // Créer un tableau avec suffisamment de copies pour un défilement fluide
-    const duplicatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos];
+    // Two copies is the minimum needed for a seamless loop: the CSS animation
+    // travels exactly -50% (one full set width), and the scroll-reset effect
+    // below jumps back by exactly one set width too.
+    const duplicatedLogos = [...logos, ...logos];
 
     // Gestion du drag avec la souris
     const handleMouseDown = (e) => {
@@ -140,7 +142,7 @@ export const PostersCarousel = () => {
     }, []);
 
     return (
-        <div className="w-full h-full overflow-hidden flex items-center bg-gray-900/80 py-4 md:py-8 lg:py-12">
+        <div className="w-full h-full overflow-hidden flex items-center bg-card/80 py-4 md:py-8 lg:py-12">
             <div className="relative w-full overflow-hidden">
                 <div 
                     ref={containerRef}
@@ -160,11 +162,14 @@ export const PostersCarousel = () => {
                     {duplicatedLogos.map((logo, idx) => (
                    <div key={idx} className="flex items-center justify-center px-4 sm:px-2 md:px-2 lg:px-1 flex-shrink-0">
                             <img
-                                src={logo}
-                                alt={`Poster ${(idx % logos.length) + 1}`}
+                                src={logo.src}
+                                alt={logo.name}
                                 className="pointer-events-none rounded"
                                 draggable={false}
-                                style={{ 
+                                loading={idx < logos.length ? "eager" : "lazy"}
+                                width={280}
+                                height={500}
+                                style={{
                                     height: 500 , width: 280, objectFit: "cover",
                                     borderRadius: '8px'
                                 }}

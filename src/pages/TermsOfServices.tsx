@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
-const TermsOfService = () => (
+const TermsOfService = () => {
+  useSEO({ title: "Terms of Use", description: "HighStream's Terms of Use — service description, account access, billing and acceptable use policy." });
+  return (
     <div className="min-h-screen bg-background flex flex-col ">
         <Header />
       <div className="container mx-auto px-4 py-16 flex flex-col ">
@@ -110,13 +114,13 @@ const TermsOfService = () => (
 
       <h2 className="text-2xl font-bold mb-6 text-foreground">8. Contact Us</h2>
       <p className=" font-semibold mb-4 leading-relaxed">
-        If you have any questions about these Terms, please <a className="text-blue-600 font-bold" href="/contact">contact us</a>.
+        If you have any questions about these Terms, please <Link className="text-primary font-bold hover:underline" to="/contact">contact us</Link>.
       </p>
-            
+
           </div>
         <Footer/>
     </div>
-)
-
+  );
+};
 
 export default TermsOfService;

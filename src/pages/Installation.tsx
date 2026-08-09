@@ -52,7 +52,7 @@ const Installation = () => {
                   <p className="text-muted-foreground mb-4">
                     From your device's home screen, hover over the Search button, and then click the Search box.
                   </p>
-                  <img src="/installation/8k-player-vip-1.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-1.webp" alt={`8K Player VIP installation — step 1 screenshot`} className="w-full h-auto" loading="eager" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
@@ -60,7 +60,7 @@ const Installation = () => {
                   <p className="text-muted-foreground mb-4">
                     Find and select <strong>Downloader</strong> from the search results.
                   </p>
-                  <img src="/installation/8k-player-vip-2.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-2.webp" alt={`8K Player VIP installation — step 2 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
@@ -68,7 +68,7 @@ const Installation = () => {
                   <p className="text-muted-foreground mb-4">
                     Click Download or Get if the application is not yet downloaded. If you have already installed the Downloader application, go directly to Step 2.
                   </p>
-                  <img src="/installation/8k-player-vip-3.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-3.webp" alt={`8K Player VIP installation — step 3 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
@@ -76,12 +76,12 @@ const Installation = () => {
                   <p className="text-muted-foreground mb-4">
                     Wait for the Downloader app to install completely before proceeding to the next step.
                   </p>
-                  <img src="/installation/8k-player-vip-5.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-5.webp" alt={`8K Player VIP installation — step 5 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">5. You will get the message   Downloader Ready to launch!</h3>
-                  <img src="/installation/8k-player-vip-6.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-6.webp" alt={`8K Player VIP installation — step 6 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
               </div>
             </section>
@@ -92,7 +92,7 @@ const Installation = () => {
               <div className="space-y-6">
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">1. Return to the Home screen to hover over Settings and click My Fire TV.</h3>
-                  <img src="/installation/8k-player-vip-7.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-7.webp" alt={`8K Player VIP installation — step 7 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
@@ -100,22 +100,22 @@ const Installation = () => {
                   <p className="text-muted-foreground mb-4">
                     <b>IMPORTANT:</b>  Please see the notes below if you do not see the developer options on your screen.
                   </p>
-                  <img src="/installation/8k-player-vip-8.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-8.webp" alt={`8K Player VIP installation — step 8 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">3. Click Install unknown apps.</h3>
-                  <img src="/installation/8k-player-vip-9.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-9.webp" alt={`8K Player VIP installation — step 9 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">4. Find the Downloader app and click on it.</h3>
-                  <img src="/installation/8k-player-vip-10.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-10.webp" alt={`8K Player VIP installation — step 10 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">5. This will enable unknown sources for the Downloader app and enable sideloading on your device.</h3>
-                  <img src="/installation/8k-player-vip-11.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-11.webp" alt={`8K Player VIP installation — step 11 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
               </div>
             </section>
@@ -128,7 +128,7 @@ const Installation = () => {
               <div className="space-y-6">
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">1.  Mouse over the Settings icon and click  My Fire TV </h3>
-                  <img src="/installation/8k-player-vip-12.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-12.webp" alt={`8K Player VIP installation — step 12 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
@@ -136,30 +136,30 @@ const Installation = () => {
                   <p className="text-muted-foreground mb-4">
                     <b>Note:</b>  Note that the developer options are missing.
                   </p>
-                  <img src="/installation/8k-player-vip-13.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-13.webp" alt={`8K Player VIP installation — step 13 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">3.  Hover over <b>Fire TV Stick and click  </b>   the OK button on your remote 7 times to become a developer</h3>
-                  <img src="/installation/8k-player-vip-14.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-14.webp" alt={`8K Player VIP installation — step 14 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">4.  Click the Back button on your remote and you will notice that Developer Options are now displayed in My Fire TV.</h3>
-                  <img src="/installation/8k-player-vip-15.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-15.webp" alt={`8K Player VIP installation — step 15 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">5. Click Install unknown apps..</h3>
-                  <img src="/installation/8k-player-vip-16.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-16.webp" alt={`8K Player VIP installation — step 16 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">6. Find the Downloader app and click on it.</h3>
-                  <img src="/installation/8k-player-vip-17.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-17.webp" alt={`8K Player VIP installation — step 17 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">7. This will enable unknown sources for the Downloader app and enable sideloading on your device.</h3>
-                  <img src="/installation/8k-player-vip-18.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-18.webp" alt={`8K Player VIP installation — step 18 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
               </div>
             </section>
@@ -170,34 +170,34 @@ const Installation = () => {
               <div className="space-y-6">
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">1. Launch the Downloader app.</h3>
-                  <img src="/installation/8k-player-vip-19.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-19.webp" alt={`8K Player VIP installation — step 19 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">2. Hover over the URL bar and click the select button on your remote</h3>
-                  <img src="/installation/8k-player-vip-20.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-20.webp" alt={`8K Player VIP installation — step 20 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">3. Type download code 439873 and click Go.</h3>
-                  <img src="/installation/8k-player-vip-21-768x346.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-21-768x346.webp" alt={`8K Player VIP installation — step 21 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">4. You will then encounter a redirect page. wait 4 to 6 seconds if the download does not start click on the link</h3>
-                  <img src="/installation/8k-player-vip-22-768x349.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-22-768x349.webp" alt={`8K Player VIP installation — step 22 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">
                     5.  Wait for the app to download.</h3>
-                  <img src="/installation/8k-player-vip-23-768x355.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-23-768x355.webp" alt={`8K Player VIP installation — step 23 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
 
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">
                     6.  Click Install.</h3>
-                  <img src="/installation/8k-player-vip-24-768x353.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-24-768x353.webp" alt={`8K Player VIP installation — step 24 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-4 ml-6">
                   7.  The application is installed.
@@ -214,17 +214,17 @@ const Installation = () => {
                   <p className="text-muted-foreground mb-4">
                     After installation, you can launch the application to use it.
                   </p>
-                  <img src="/installation/8k-player-vip-25-768x346.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-25-768x346.webp" alt={`8K Player VIP installation — step 25 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
                 <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">
                     1. Click on 8k VIP</h3>
-                  <img src="/installation/8k-player-vip-26-768x379.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-26-768x379.webp" alt={`8K Player VIP installation — step 26 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
                <div className="border border-border rounded-lg p-6">
                   <h3 className="text-xl font-semibold text-foreground mb-4">
                     2. Click on the settings icon</h3>
-                  <img src="/installation/8k-player-vip-27-768x379.webp" alt="8k-player-vip-1" className="w-full h-auto" />
+                  <img src="/installation/8k-player-vip-27-768x379.webp" alt={`8K Player VIP installation — step 27 screenshot`} className="w-full h-auto" loading="lazy" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4 mt-3 ml-4">

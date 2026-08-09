@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { useLanguage, Language } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
@@ -58,28 +59,30 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-20'}`}>
           {/* Logo lockup: H mark + chrome wordmark */}
-          <a href="/" className="group flex items-center gap-3">
+          <Link to="/" className="group flex items-center gap-3">
             <img
               src="/highstream-mark.png"
               alt="HighStream"
+              width={44}
+              height={44}
               className="h-10 w-auto drop-shadow-[0_0_14px_rgba(10,162,255,0.55)] transition-transform duration-300 group-hover:scale-105 md:h-11"
             />
             <span className="font-display text-xl font-bold uppercase tracking-[0.18em] text-chrome md:text-2xl">
               HighStream
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-7 lg:flex">
             {navigationItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                to={item.href}
                 className="group relative py-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {item.label}
                 <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-electric transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -87,7 +90,7 @@ export const Header = () => {
           <div className="hidden items-center gap-3 lg:flex">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="h-9 gap-1.5 rounded-full border border-border/60 px-3 text-muted-foreground hover:text-foreground">
+                <Button variant="ghost" size="sm" className="h-11 gap-1.5 rounded-full border border-border/60 px-3 text-muted-foreground hover:text-foreground">
                   <Globe className="h-4 w-4" />
                   <span className="text-xs font-semibold">{currentLanguage.code.toUpperCase()}</span>
                   <ChevronDown className="h-3 w-3" />
@@ -119,7 +122,7 @@ export const Header = () => {
           <div className="flex items-center gap-2 lg:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="h-9 gap-1 rounded-full border border-border/60 px-2.5 text-muted-foreground">
+                <Button variant="ghost" size="sm" className="h-11 gap-1 rounded-full border border-border/60 px-2.5 text-muted-foreground">
                   <Globe className="h-4 w-4" />
                   <span className="text-xs font-semibold">{currentLanguage.code.toUpperCase()}</span>
                 </Button>
@@ -139,9 +142,10 @@ export const Header = () => {
             </DropdownMenu>
 
             <button
-              className="rounded-lg p-2 text-foreground"
+              className="flex h-11 w-11 items-center justify-center rounded-lg text-foreground"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -152,14 +156,14 @@ export const Header = () => {
         {isOpen && (
           <div className="glass mt-2 space-y-1 rounded-2xl border-primary/15 p-4 lg:hidden">
             {navigationItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
+                to={item.href}
                 className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-primary/10 hover:text-foreground"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <Button
               onClick={openWhatsApp}

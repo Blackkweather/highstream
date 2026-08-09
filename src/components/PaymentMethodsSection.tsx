@@ -94,10 +94,11 @@ export const PaymentMethodsSection = () => {
                   <div className={`${method.dimension} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                     <img
                       src={method.logo}
-                      alt={method.name}
-                      className=" object-contain"
-                      width={"100px"}
-                      height={"100px"}
+                      alt={`${method.name} payment method`}
+                      className="object-contain"
+                      width={100}
+                      height={100}
+                      loading="lazy"
                     />
                   </div>
 

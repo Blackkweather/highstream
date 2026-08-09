@@ -6,6 +6,8 @@ type SEOInput = {
   /** path is optional; defaults to the current location */
   path?: string;
   image?: string;
+  /** set true on pages that should not be indexed (404, internal utility pages) */
+  noindex?: boolean;
 };
 
 const BRAND = "HighStream";
@@ -38,7 +40,7 @@ function setLink(rel: string, href: string) {
  * tags per route. Canonical + og:url derive from the live origin, so they are
  * always correct on whatever domain the site is deployed to.
  */
-export function useSEO({ title, description, path, image }: SEOInput) {
+export function useSEO({ title, description, path, image, noindex }: SEOInput) {
   const desc = description ?? DEFAULT_DESC;
   const img = image ?? DEFAULT_IMAGE;
   const fullTitle = title.includes(BRAND) ? title : `${title} | ${BRAND}`;
@@ -64,7 +66,8 @@ export function useSEO({ title, description, path, image }: SEOInput) {
     setMeta("name", "twitter:image", absImg);
 
     setLink("canonical", url);
-  }, [fullTitle, desc, img, path]);
+    setMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
+  }, [fullTitle, desc, img, path, noindex]);
 }
 
 export default useSEO;

@@ -92,7 +92,7 @@ const Blog = () => {
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumbs */}
           <nav className="flex items-center space-x-2 text-sm text-muted-foreground mb-8">
-            <a href="/" className="hover:text-primary">Home</a>
+            <Link to="/" className="hover:text-primary">Home</Link>
             <span>/</span>
             <span>Blog</span>
           </nav>

@@ -1,31 +1,31 @@
 
 
 const logos = [
-    "/HighStream Logos/amazon-prime-video-seeklogo.png",
-    "/HighStream Logos/apple-tv-seeklogo.png",
-    "/HighStream Logos/bbc-news-seeklogo.png",
-    "/HighStream Logos/bundesliga-seeklogo.png",
-    "/HighStream Logos/cnn-seeklogo.png",
-    "/HighStream Logos/curiosity-stream-seeklogo.png",
-    "/HighStream Logos/discovery-channel-seeklogo.png",
-    "/HighStream Logos/disney-channel-seeklogo.png",
-    "/HighStream Logos/formula-1-seeklogo.png",
-    "/HighStream Logos/fubotv-seeklogo.png",
-    "/HighStream Logos/hbo-seeklogo.png",
-    "/HighStream Logos/hulu-seeklogo.png",
-    "/HighStream Logos/laliga-seeklogo.png",
-    "/HighStream Logos/major-league-baseball-seeklogo.png",
-    "/HighStream Logos/national-geographic-seeklogo.png",
-    "/HighStream Logos/nba-seeklogo.png",
-    "/HighStream Logos/netflix-seeklogo.png",
-    "/HighStream Logos/new-premier-league-2016-17-seeklogo.png",
-    "/HighStream Logos/paramount-seeklogo.png",
-    "/HighStream Logos/sky-sports-seeklogo.png",
-    "/HighStream Logos/nfl-seeklogo.png",
-    "/HighStream Logos/uefa-champions-league-seeklogo.png",
-    "/HighStream Logos/bein-sports-seeklogo.png",
-    "/HighStream Logos/ufc-seeklogo.png",
-     "/HighStream Logos/dazn-seeklogo.png",
+    { src: "/HighStream Logos/amazon-prime-video-seeklogo.png", name: "Amazon Prime Video" },
+    { src: "/HighStream Logos/apple-tv-seeklogo.png", name: "Apple TV" },
+    { src: "/HighStream Logos/bbc-news-seeklogo.png", name: "BBC News" },
+    { src: "/HighStream Logos/bundesliga-seeklogo.png", name: "Bundesliga" },
+    { src: "/HighStream Logos/cnn-seeklogo.png", name: "CNN" },
+    { src: "/HighStream Logos/curiosity-stream-seeklogo.png", name: "Curiosity Stream" },
+    { src: "/HighStream Logos/discovery-channel-seeklogo.png", name: "Discovery Channel" },
+    { src: "/HighStream Logos/disney-channel-seeklogo.png", name: "Disney Channel" },
+    { src: "/HighStream Logos/formula-1-seeklogo.png", name: "Formula 1" },
+    { src: "/HighStream Logos/fubotv-seeklogo.png", name: "fuboTV" },
+    { src: "/HighStream Logos/hbo-seeklogo.png", name: "HBO" },
+    { src: "/HighStream Logos/hulu-seeklogo.png", name: "Hulu" },
+    { src: "/HighStream Logos/laliga-seeklogo.png", name: "LaLiga" },
+    { src: "/HighStream Logos/major-league-baseball-seeklogo.png", name: "Major League Baseball" },
+    { src: "/HighStream Logos/national-geographic-seeklogo.png", name: "National Geographic" },
+    { src: "/HighStream Logos/nba-seeklogo.png", name: "NBA" },
+    { src: "/HighStream Logos/netflix-seeklogo.png", name: "Netflix" },
+    { src: "/HighStream Logos/new-premier-league-2016-17-seeklogo.png", name: "Premier League" },
+    { src: "/HighStream Logos/paramount-seeklogo.png", name: "Paramount" },
+    { src: "/HighStream Logos/sky-sports-seeklogo.png", name: "Sky Sports" },
+    { src: "/HighStream Logos/nfl-seeklogo.png", name: "NFL" },
+    { src: "/HighStream Logos/uefa-champions-league-seeklogo.png", name: "UEFA Champions League" },
+    { src: "/HighStream Logos/bein-sports-seeklogo.png", name: "beIN Sports" },
+    { src: "/HighStream Logos/ufc-seeklogo.png", name: "UFC" },
+    { src: "/HighStream Logos/dazn-seeklogo.png", name: "DAZN" },
 ];
 import { useState, useRef } from "react";
 
@@ -76,14 +76,15 @@ export const LogoCarousel = () => {
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseLeave}
             >
-                {/* Triple les logos pour un défilement infini vraiment fluide */}
-                {[...logos, ...logos, ...logos].map((logo, idx) => (
+                {/* Duplicated once for a seamless infinite loop (translateX -50%) */}
+                {[...logos, ...logos].map((logo, idx) => (
                     <div key={idx} className="flex items-center justify-center px-4 sm:px-4 md:px-6 lg:px-8 flex-shrink-0">
                         <img
-                            src={logo}
-                            alt={`Logo ${idx + 1}`}
+                            src={logo.src}
+                            alt={logo.name}
                             className="h-8 sm:h-12 md:h-12 lg:h-14 xl:h-16 w-auto object-contain max-w-none pointer-events-none"
                             draggable={false}
+                            loading={idx < logos.length ? "eager" : "lazy"}
                         />
                     </div>
                 ))}

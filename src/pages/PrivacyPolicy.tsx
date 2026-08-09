@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
-const PrivacyPolicy = () => (
+const PrivacyPolicy = () => {
+  useSEO({ title: "Privacy Policy", description: "How HighStream collects, uses and protects your data. Minimal data collection, no logging of viewing activity." });
+  return (
     <div className="min-h-screen bg-background flex flex-col ">
         <Header/>
   <div className="container mx-auto px-4 py-16 flex flex-col ">
@@ -111,10 +115,10 @@ const PrivacyPolicy = () => (
 
       <h2 className="text-2xl font-bold mb-6 text-foreground">Contact Us</h2>
       <p className=" font-semibold mb-8 leading-relaxed">
-        For any questions regarding this Privacy Policy, please <a className="text-blue-600 font-bold" href="/contact">contact us</a>.
+        For any questions regarding this Privacy Policy, please <Link className="text-primary font-bold hover:underline" to="/contact">contact us</Link>.
       </p>
 
-      <div className="border-t border-gray-200 pt-8">
+      <div className="border-t border-border pt-8">
         <h2 className="text-2xl font-bold mb-6 text-foreground">
           Frequently Asked Questions (FAQ) about Privacy and Our IPTV Service
         </h2>
@@ -163,6 +167,7 @@ const PrivacyPolicy = () => (
 
         <Footer/>
     </div>
-);
+  );
+};
 
 export default PrivacyPolicy;

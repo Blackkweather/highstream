@@ -9,45 +9,72 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Phone, Mail, Clock, Send } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { FloatingSocialButtons } from "@/components/FloatingSocialButtons";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from "emailjs-com";
+import { toast } from "@/components/ui/sonner";
 import { openWhatsApp, openTelegram } from "@/services/socialService";
+
+// Minimum time (ms) a human needs to fill the form; bots that submit instantly get blocked.
+const MIN_FILL_TIME_MS = 2500;
+
 const Contact = () => {
   useSEO({ title: "Contact HighStream — 24/7 IPTV Support", description: "Get in touch with HighStream. 24/7 support over WhatsApp and Telegram for setup, billing and troubleshooting." });
   const { t } = useLanguage();
 
-  // Ajoute l'état pour les champs du formulaire
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
+  const formLoadedAt = useRef(Date.now());
+  // Honeypot: real users never see or fill this field; bots that auto-fill every input do.
+  const honeypotRef = useRef<HTMLInputElement>(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const handleSend = async (e) => {
+  const validate = () => {
+    const next: typeof errors = {};
+    if (!form.name.trim()) next.name = "Please enter your name.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = "Please enter a valid email address.";
+    if (form.message.trim().length < 10) next.message = "Message must be at least 10 characters.";
+    setErrors(next);
+    return Object.keys(next).length === 0;
+  };
+
+  const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (honeypotRef.current?.value) {
+      // Silently drop bot submissions without revealing the trap.
+      return;
+    }
+    if (Date.now() - formLoadedAt.current < MIN_FILL_TIME_MS) {
+      toast.error("Please take a moment to fill out the form.");
+      return;
+    }
+    if (!validate()) return;
+
     setSending(true);
     try {
       await emailjs.send(
-        "service_2ih4eqc", // à remplacer par ton service ID EmailJS
-        "template_xlrjhvo", // à remplacer par ton template ID EmailJS
+        "service_2ih4eqc",
+        "template_xlrjhvo",
         {
           from_name: form.name,
           from_email: form.email,
           message: form.message,
         },
-        "RPumTLOK8bWer3Lp3" // à remplacer par ton user ID EmailJS (public key)
+        "RPumTLOK8bWer3Lp3"
       );
-      setSent(true);
+      toast.success("Message sent — we'll get back to you soon.");
       setForm({ name: "", email: "", message: "" });
-      setTimeout(() => setSent(false), 3000); 
+      setErrors({});
     } catch (err) {
-      alert("Erreur lors de l'envoi du message.");
+      toast.error("Something went wrong sending your message. Please try WhatsApp or Telegram instead.");
     }
     setSending(false);
   };
@@ -72,32 +99,63 @@ const Contact = () => {
                 <CardTitle>{t('contact.sendMessage')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <form onSubmit={handleSend}>
+                <form onSubmit={handleSend} noValidate>
+                  {/* Honeypot field — hidden from real users, invisible to screen readers, but bots that
+                      auto-fill every input will populate it and get silently rejected on submit. */}
+                  <input
+                    ref={honeypotRef}
+                    type="text"
+                    name="company"
+                    id="company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden opacity-0"
+                  />
                   <div className="space-y-2">
                     <Label htmlFor="name">{t('contact.name')}</Label>
-                    <Input id="name" placeholder={t('contact.namePlaceholder')}
-                    value={form.name} onChange={handleChange} />
+                    <Input
+                      id="name"
+                      placeholder={t('contact.namePlaceholder')}
+                      value={form.name}
+                      onChange={handleChange}
+                      required
+                      aria-invalid={!!errors.name}
+                      aria-describedby={errors.name ? "name-error" : undefined}
+                    />
+                    {errors.name && <p id="name-error" className="text-sm text-destructive">{errors.name}</p>}
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-2 mt-4">
                     <Label htmlFor="email">{t('contact.email')}</Label>
-                    <Input id="email" type="email" 
-                     value={form.email} onChange={handleChange}
-                    placeholder={t('contact.emailPlaceholder')} />
+                    <Input
+                      id="email"
+                      type="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder={t('contact.emailPlaceholder')}
+                      required
+                      aria-invalid={!!errors.email}
+                      aria-describedby={errors.email ? "email-error" : undefined}
+                    />
+                    {errors.email && <p id="email-error" className="text-sm text-destructive">{errors.email}</p>}
                   </div>
-                  <div className="space-y-2 mb-4">
+                  <div className="space-y-2 mb-4 mt-4">
                     <Label htmlFor="message">{t('contact.message')}</Label>
                     <Textarea
                       id="message"
                       placeholder={t('contact.messagePlaceholder')}
                       rows={6}
-                                           value={form.message}
+                      value={form.message}
                       onChange={handleChange}
+                      required
+                      aria-invalid={!!errors.message}
+                      aria-describedby={errors.message ? "message-error" : undefined}
                     />
+                    {errors.message && <p id="message-error" className="text-sm text-destructive">{errors.message}</p>}
                   </div>
                   <Button className="w-full" size="lg" type="submit" disabled={sending}>
-                    {t('contact.send')}
+                    {sending ? "Sending..." : t('contact.send')}
                   </Button>
-                      {sent && <p className="text-green-600 mt-2">Message sent successfully!</p>}
                 </form>
 
               </CardContent>

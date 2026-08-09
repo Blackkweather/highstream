@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { Lock, Zap, Globe2 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { openWhatsApp, openTelegram } from "@/services/socialService";
 const getFooterLinks = (t: (key: string) => string) => ({
@@ -79,10 +81,10 @@ export const Footer = () => {
           {/* Logo and Description */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <a href="/">
+              <Link to="/">
              <img src="/logo_footer.webp" alt="HighStream Logo"
               width={180} height={80}  />
-              </a>
+              </Link>
 
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -97,12 +99,12 @@ export const Footer = () => {
 
               {footerLinks.product.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -113,28 +115,30 @@ export const Footer = () => {
             <h3 className="text-foreground font-semibold mb-4">{t('footer.support')}</h3>
             <ul className="space-y-2">
                 <li>
-                  <a 
-                    href={'/contact'}
+                  <Link
+                    to="/contact"
                     className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                   >
                    Contact
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a 
+                  <button
+                    type="button"
                     onClick={openWhatsApp}
                     className="text-muted-foreground hover:text-foreground transition-colors text-sm cursor-pointer"
                   >
                  WhatsApp
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a 
+                  <button
+                    type="button"
                     onClick={openTelegram}
                     className="text-muted-foreground hover:text-foreground transition-colors text-sm cursor-pointer"
                   >
                    Telegram
-                  </a>
+                  </button>
                 </li>
             </ul>
           </div>
@@ -145,12 +149,12 @@ export const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <a 
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -165,11 +169,11 @@ export const Footer = () => {
             </div>
             
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <span>🔒  {t('footer.sslSecured')}</span>
+              <span className="flex items-center gap-1.5"><Lock className="h-3.5 w-3.5 text-primary" /> {t('footer.sslSecured')}</span>
               <span>•</span>
-              <span>⚡ {t('infrastructure.uptime')}</span>
+              <span className="flex items-center gap-1.5"><Zap className="h-3.5 w-3.5 text-primary" /> {t('infrastructure.uptime')}</span>
               <span>•</span>
-              <span>🌍 {t('footer.globalCdn')}</span>
+              <span className="flex items-center gap-1.5"><Globe2 className="h-3.5 w-3.5 text-primary" /> {t('footer.globalCdn')}</span>
             </div>
           </div>
         </div>

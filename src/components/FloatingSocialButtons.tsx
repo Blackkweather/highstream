@@ -33,11 +33,10 @@ export const FloatingSocialButtons = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       {/* WhatsApp Button */}
-      <a
+      <button
+        type="button"
         onClick={openWhatsApp}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group bg-[#25D366] hover:bg-[#20B858] text-white p-4 rounded-full shadow-lg hover:shadow-xl
+        className="group relative bg-[#25D366] hover:bg-[#20B858] text-white p-4 rounded-full shadow-lg hover:shadow-xl
          transform hover:scale-110 transition-all duration-300 cursor-pointer"
         aria-label="Contact us on WhatsApp"
       >
@@ -45,14 +44,13 @@ export const FloatingSocialButtons = () => {
         <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-background text-foreground px-3 py-1 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           WhatsApp Support
         </div>
-      </a>
-      
+      </button>
+
       {/* Telegram Button */}
-      <a
+      <button
+        type="button"
         onClick={openTelegram}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full
+        className="group relative bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full
          shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 cursor-pointer"
         aria-label="Contact us on Telegram"
       >
@@ -60,7 +58,7 @@ export const FloatingSocialButtons = () => {
         <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-background text-foreground px-3 py-1 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
           Telegram Support
         </div>
-      </a>
+      </button>
     </div>
   );
 }; 
