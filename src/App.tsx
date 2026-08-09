@@ -5,7 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { useEffect, lazy, Suspense } from "react";
+import IntroOverlay from "@/components/IntroOverlay";
+import { useEffect, useState, lazy, Suspense } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -36,6 +37,10 @@ const RouteFallback = () => (
 
 const AppContent = () =>  {
     const { dir } = useLanguage();
+    // Lazy-init reads sessionStorage once on first render only; the intro is
+    // fully unmounted (not just hidden) once it finishes, so there is no
+    // lingering state or effect to clean up afterwards.
+    const [showIntro, setShowIntro] = useState(() => !sessionStorage.getItem("hs_intro_seen"));
       useEffect(() => {
     AOS.init({
       duration: 1000, // durée de l'animation en ms
@@ -47,6 +52,14 @@ const AppContent = () =>  {
 
   return (
     <div dir={dir} className={`min-h-screen bg-background ${dir === 'rtl' ? 'font-arabic' : ''}`}>
+      {showIntro && (
+        <IntroOverlay
+          onFinish={() => {
+            sessionStorage.setItem("hs_intro_seen", "1");
+            setShowIntro(false);
+          }}
+        />
+      )}
       <Toaster />
       <Sonner />
       <BrowserRouter>
