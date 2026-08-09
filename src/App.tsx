@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
-import IntroOverlay from "@/components/IntroOverlay";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { useEffect, lazy, Suspense } from "react";
 import AOS from 'aos';
@@ -48,7 +47,6 @@ const AppContent = () =>  {
 
   return (
     <div dir={dir} className={`min-h-screen bg-background ${dir === 'rtl' ? 'font-arabic' : ''}`}>
-      <IntroOverlay />
       <Toaster />
       <Sonner />
       <BrowserRouter>

@@ -236,35 +236,6 @@
   50% { opacity: 0.5; box-shadow: 0 0 2px hsl(204 100% 60% / 0.3); }
 }
 
-/* =========================================================
-   INTRO OVERLAY animation
-   ========================================================= */
-@keyframes hs-intro-logo-in {
-  0%   { opacity: 0; transform: scale(0.82); filter: blur(14px) brightness(2.2); }
-  55%  { opacity: 1; transform: scale(1.02); filter: blur(0) brightness(1.35); }
-  100% { opacity: 1; transform: scale(1); filter: blur(0) brightness(1); }
-}
-@keyframes hs-intro-scan {
-  0% { transform: translateY(-120%); opacity: 0; }
-  20% { opacity: 1; }
-  100% { transform: translateY(120%); opacity: 0; }
-}
-@keyframes hs-intro-ring {
-  0% { transform: scale(0.2); opacity: 0.9; border-width: 3px; }
-  100% { transform: scale(2.6); opacity: 0; border-width: 0.5px; }
-}
-@keyframes hs-intro-word {
-  0% { opacity: 0; letter-spacing: 1.4em; filter: blur(8px); }
-  100% { opacity: 1; letter-spacing: 0.36em; filter: blur(0); }
-}
-@keyframes hs-intro-out {
-  0% { opacity: 1; }
-  100% { opacity: 0; visibility: hidden; }
-}
-@keyframes hs-bar {
-  from { width: 0; } to { width: 100%; }
-}
-
 /* Respect reduced motion everywhere */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
