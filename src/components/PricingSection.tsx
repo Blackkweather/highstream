@@ -7,15 +7,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCurrency } from "@/hooks/useCurrency";
 
-// Prices are set per-currency rather than live-converted: EUR figures are
-// fixed, clean, hand-set values (not a decimal FX conversion) so they never
-// show an ugly number like "€76.79".
+// Single set of numbers — only the currency symbol changes by region, the
+// price itself does not.
 const pricingPlansByTab = {
   one: [
     {
       title: "1 Month",
-      usd: 15,
-      eur: 15,
+      price: 15,
       period: "month",
       popular: false,
       animation: "fade-right",
@@ -31,10 +29,8 @@ const pricingPlansByTab = {
     },
     {
       title: "3 Months",
-      usd: 35,
-      eur: 30,
-      originalUsd: 45,
-      originalEur: 40,
+      price: 35,
+      originalPrice: 45,
       period: "3 months",
       popular: false,
       animation: "fade-right",
@@ -50,10 +46,8 @@ const pricingPlansByTab = {
     },
     {
       title: "6 Months",
-      usd: 60,
-      eur: 55,
-      originalUsd: 70,
-      originalEur: 65,
+      price: 50,
+      originalPrice: 70,
       period: "6 months",
       popular: false,
       animation: "fade-left",
@@ -70,10 +64,8 @@ const pricingPlansByTab = {
     },
     {
       title: "12 Months",
-      usd: 75,
-      eur: 70,
-      originalUsd: 110,
-      originalEur: 100,
+      price: 75,
+      originalPrice: 110,
       period: "year",
       popular: true,
       animation: "fade-left",
@@ -91,8 +83,7 @@ const pricingPlansByTab = {
   two: [
     {
       title: "1 Month",
-      usd: 25,
-      eur: 25,
+      price: 25,
       period: "month",
       popular: false,
       features: [
@@ -107,10 +98,8 @@ const pricingPlansByTab = {
     },
     {
       title: "3 Months",
-      usd: 60,
-      eur: 55,
-      originalUsd: 90,
-      originalEur: 85,
+      price: 60,
+      originalPrice: 90,
       period: "3 months",
       popular: false,
       features: [
@@ -125,10 +114,8 @@ const pricingPlansByTab = {
     },
     {
       title: "6 Months",
-      usd: 85,
-      eur: 80,
-      originalUsd: 140,
-      originalEur: 130,
+      price: 85,
+      originalPrice: 140,
       period: "6 months",
       popular: false,
       features: [
@@ -144,10 +131,8 @@ const pricingPlansByTab = {
     },
     {
       title: "12 Months",
-      usd: 125,
-      eur: 115,
-      originalUsd: 210,
-      originalEur: 195,
+      price: 125,
+      originalPrice: 210,
       period: "year",
       popular: true,
       features: [
@@ -164,8 +149,7 @@ const pricingPlansByTab = {
   three: [
     {
       title: "1 Month",
-      usd: 35,
-      eur: 30,
+      price: 35,
       period: "month",
       popular: false,
       features: [
@@ -180,10 +164,8 @@ const pricingPlansByTab = {
     },
     {
       title: "3 Months",
-      usd: 85,
-      eur: 80,
-      originalUsd: 110,
-      originalEur: 100,
+      price: 85,
+      originalPrice: 110,
       period: "3 months",
       popular: false,
       features: [
@@ -198,10 +180,8 @@ const pricingPlansByTab = {
     },
     {
       title: "6 Months",
-      usd: 125,
-      eur: 115,
-      originalUsd: 200,
-      originalEur: 185,
+      price: 125,
+      originalPrice: 200,
       period: "6 months",
       popular: false,
       features: [
@@ -217,10 +197,8 @@ const pricingPlansByTab = {
     },
     {
       title: "12 Months",
-      usd: 175,
-      eur: 160,
-      originalUsd: 280,
-      originalEur: 260,
+      price: 175,
+      originalPrice: 280,
       period: "year",
       popular: true,
       features: [
@@ -310,9 +288,7 @@ export const PricingSection = () => {
         {/* Plans selon le tab sélectionné */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
            {pricingPlansByTab[selectedTab].map((plan, index) => {
-             const price = currency === "EUR" ? plan.eur : plan.usd;
-             const originalPrice = currency === "EUR" ? plan.originalEur : plan.originalUsd;
-             const savings = originalPrice ? originalPrice - price : undefined;
+             const savings = plan.originalPrice ? plan.originalPrice - plan.price : undefined;
 
              return (
             <Card
@@ -341,16 +317,16 @@ export const PricingSection = () => {
 
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-4xl font-bold text-primary">
-                      {symbol}{price}
+                      {symbol}{plan.price}
                     </span>
                     <span className="text-muted-foreground">
                       /{plan.period}
                     </span>
                   </div>
 
-                  {originalPrice ? (
+                  {plan.originalPrice ? (
                     <div className="text-muted-foreground line-through text-sm mt-1">
-                      Originally {symbol}{originalPrice}
+                      Originally {symbol}{plan.originalPrice}
                     </div>
                   ) : null}
                 </div>
