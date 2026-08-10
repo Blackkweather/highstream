@@ -46,7 +46,7 @@ const pricingPlansByTab = {
     },
     {
       title: "6 Months",
-      price: 50,
+      price: 60,
       originalPrice: 70,
       period: "6 months",
       popular: false,
