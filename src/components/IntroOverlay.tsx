@@ -16,7 +16,7 @@ export const IntroOverlay = ({ onFinish }: IntroOverlayProps) => {
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const holdMs = reduce ? 0 : 1200;
-    const fadeMs = reduce ? 0 : 400;
+    const fadeMs = reduce ? 0 : 500;
 
     const startLeave = window.setTimeout(() => setLeaving(true), holdMs);
     const finish = window.setTimeout(onFinish, holdMs + fadeMs);
@@ -37,7 +37,7 @@ export const IntroOverlay = ({ onFinish }: IntroOverlayProps) => {
     <div
       role="presentation"
       onClick={skip}
-      className="fixed inset-0 z-[200] flex items-center justify-center bg-[#03060c] cursor-pointer transition-opacity duration-[400ms] ease-out"
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-[#03060c] cursor-pointer transition-opacity duration-500 ease-out"
       style={{ opacity: leaving ? 0 : 1 }}
     >
       <div className="flex flex-col items-center">
