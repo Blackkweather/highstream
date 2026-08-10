@@ -15,7 +15,7 @@ const pricingPlansByTab = {
     {
       title: "1 Month",
       usd: 15,
-      eur: 14,
+      eur: 15,
       period: "month",
       popular: false,
       animation: "fade-right",
@@ -32,9 +32,9 @@ const pricingPlansByTab = {
     {
       title: "3 Months",
       usd: 35,
-      eur: 32,
+      eur: 30,
       originalUsd: 45,
-      originalEur: 41,
+      originalEur: 40,
       period: "3 months",
       popular: false,
       animation: "fade-right",
@@ -53,7 +53,7 @@ const pricingPlansByTab = {
       usd: 60,
       eur: 55,
       originalUsd: 70,
-      originalEur: 64,
+      originalEur: 65,
       period: "6 months",
       popular: false,
       animation: "fade-left",
@@ -71,9 +71,9 @@ const pricingPlansByTab = {
     {
       title: "12 Months",
       usd: 75,
-      eur: 69,
+      eur: 70,
       originalUsd: 110,
-      originalEur: 101,
+      originalEur: 100,
       period: "year",
       popular: true,
       animation: "fade-left",
@@ -92,7 +92,7 @@ const pricingPlansByTab = {
     {
       title: "1 Month",
       usd: 25,
-      eur: 23,
+      eur: 25,
       period: "month",
       popular: false,
       features: [
@@ -110,7 +110,7 @@ const pricingPlansByTab = {
       usd: 60,
       eur: 55,
       originalUsd: 90,
-      originalEur: 83,
+      originalEur: 85,
       period: "3 months",
       popular: false,
       features: [
@@ -126,9 +126,9 @@ const pricingPlansByTab = {
     {
       title: "6 Months",
       usd: 85,
-      eur: 78,
+      eur: 80,
       originalUsd: 140,
-      originalEur: 129,
+      originalEur: 130,
       period: "6 months",
       popular: false,
       features: [
@@ -147,7 +147,7 @@ const pricingPlansByTab = {
       usd: 125,
       eur: 115,
       originalUsd: 210,
-      originalEur: 193,
+      originalEur: 195,
       period: "year",
       popular: true,
       features: [
@@ -165,7 +165,7 @@ const pricingPlansByTab = {
     {
       title: "1 Month",
       usd: 35,
-      eur: 32,
+      eur: 30,
       period: "month",
       popular: false,
       features: [
@@ -181,9 +181,9 @@ const pricingPlansByTab = {
     {
       title: "3 Months",
       usd: 85,
-      eur: 78,
+      eur: 80,
       originalUsd: 110,
-      originalEur: 101,
+      originalEur: 100,
       period: "3 months",
       popular: false,
       features: [
@@ -201,7 +201,7 @@ const pricingPlansByTab = {
       usd: 125,
       eur: 115,
       originalUsd: 200,
-      originalEur: 184,
+      originalEur: 185,
       period: "6 months",
       popular: false,
       features: [
@@ -218,9 +218,9 @@ const pricingPlansByTab = {
     {
       title: "12 Months",
       usd: 175,
-      eur: 161,
+      eur: 160,
       originalUsd: 280,
-      originalEur: 258,
+      originalEur: 260,
       period: "year",
       popular: true,
       features: [
