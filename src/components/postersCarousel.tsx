@@ -160,19 +160,17 @@ export const PostersCarousel = () => {
                     onWheel={handleWheel}
                 >
                     {duplicatedLogos.map((logo, idx) => (
-                   <div key={idx} className="flex items-center justify-center px-4 sm:px-2 md:px-2 lg:px-1 flex-shrink-0">
+                   <div key={idx} className="flex items-center justify-center px-2 sm:px-2 md:px-2 lg:px-1 flex-shrink-0">
+                            {/* Poster ratio is fixed at 280:500 — the mobile step-down keeps
+                                that ratio so a phone shows a poster, not a billboard. */}
                             <img
                                 src={logo.src}
                                 alt={logo.name}
-                                className="pointer-events-none rounded"
+                                className="pointer-events-none rounded-lg h-[260px] w-[146px] object-cover sm:h-[360px] sm:w-[202px] lg:h-[500px] lg:w-[280px]"
                                 draggable={false}
                                 loading={idx < logos.length ? "eager" : "lazy"}
                                 width={280}
                                 height={500}
-                                style={{
-                                    height: 500 , width: 280, objectFit: "cover",
-                                    borderRadius: '8px'
-                                }}
                             />
                         </div>
                     ))}

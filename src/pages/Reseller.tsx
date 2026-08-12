@@ -64,7 +64,7 @@ const Reseller = () => {
         <div className="max-w-6xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">{t('reseller.title')}</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">{t('reseller.title')}</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('reseller.subtitle')}
             </p>
@@ -87,7 +87,7 @@ const Reseller = () => {
 
           {/* Pricing Packs */}
           <div className="mb-16">
- <h2 className="text-3xl font-bold text-center mb-12">{t('reseller.packs')}</h2>
+ <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">{t('reseller.packs')}</h2>
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {resellerPacks.map((pack, index) => (
                 <Card key={index} className={`relative ${pack.popular ? 'border-primary shadow-lg' : ''}`}>
@@ -98,7 +98,7 @@ const Reseller = () => {
                   )}
                   <CardHeader className="text-center">
                     <CardTitle className="text-2xl">{pack.credits} Credits</CardTitle>
-                    <div className="text-3xl font-bold text-primary">{pack.price}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-primary">{pack.price}</div>
                     <Badge variant="secondary">{pack.savings}</Badge>
                   </CardHeader>
                   <CardContent className="space-y-4">
@@ -131,7 +131,7 @@ const Reseller = () => {
 
           {/* How it Works */}
           <div className="mb-16">
-               <h2 className="text-3xl font-bold text-center mb-12">{t('reseller.howItWorks')}</h2>
+               <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">{t('reseller.howItWorks')}</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -160,7 +160,7 @@ const Reseller = () => {
           {/* CTA Section */}
           <Card className="bg-gradient-to-r from-primary/10 to-secondary/10 border-primary/20">
             <CardContent className="text-center py-12">
-             <h2 className="text-3xl font-bold mb-4">{t('reseller.ready')}</h2>
+             <h2 className="text-2xl sm:text-3xl font-bold mb-4">{t('reseller.ready')}</h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                          {t('reseller.readyDesc')}
               </p>

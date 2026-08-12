@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
     <div className="min-h-screen bg-background flex flex-col ">
         <Header/>
   <div className="container mx-auto px-4 py-16 flex flex-col ">
-      <h1 className="text-3xl font-bold mb-4 text-center" >HighStream Privacy Policy</h1>
+      <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-center" >HighStream Privacy Policy</h1>
       <p className="text-sm mb-8">
         <span className="font-semibold">Last Updated:</span> August 2, 2025
       </p>

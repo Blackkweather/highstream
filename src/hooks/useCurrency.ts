@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 
 export type Currency = "USD" | "EUR";
 
-// An explicit user choice, once made, persists indefinitely and is never
-// overridden by auto-detection.
-const MANUAL_KEY = "hs_currency_manual";
 // The IP-detected result is cached per browser session so navigating between
 // pages doesn't re-hit the lookup API on every mount.
 const SESSION_KEY = "hs_currency_ip";
@@ -28,22 +25,21 @@ function detectFromTimezone(): Currency {
 }
 
 /**
- * Currency defaults to a timezone-based guess instantly (no network wait),
- * then upgrades to a real client-side IP lookup (ipapi.co) shortly after —
- * unless the visitor already made an explicit manual choice, which always
- * wins and is never overridden. Any lookup failure (offline, rate-limited,
- * blocked by an ad/privacy extension, slow network) silently keeps whatever
- * is already showing; nothing about the page depends on this succeeding.
+ * Currency is detected, never chosen: it starts from a timezone-based guess
+ * instantly (no network wait), then upgrades to a real client-side IP lookup
+ * (ipapi.co) shortly after. Any lookup failure (offline, rate-limited, blocked
+ * by an ad/privacy extension, slow network) silently keeps whatever is already
+ * showing; nothing about the page depends on this succeeding.
+ *
+ * Only the symbol changes by region — the price numbers are identical
+ * everywhere — so a wrong guess is cosmetic.
  */
-export function useCurrency() {
-  const manual = () => readStored(MANUAL_KEY, localStorage);
-
-  const [currency, setCurrencyState] = useState<Currency>(
-    () => manual() ?? readStored(SESSION_KEY, sessionStorage) ?? detectFromTimezone()
+export function useCurrency(): Currency {
+  const [currency, setCurrency] = useState<Currency>(
+    () => readStored(SESSION_KEY, sessionStorage) ?? detectFromTimezone()
   );
 
   useEffect(() => {
-    if (manual()) return;
     if (readStored(SESSION_KEY, sessionStorage)) return;
 
     const controller = new AbortController();
@@ -59,7 +55,7 @@ export function useCurrency() {
         } catch {
           // ignore storage errors (private browsing, etc.)
         }
-        setCurrencyState(detected);
+        setCurrency(detected);
       })
       .catch(() => {
         // keep the timezone-based guess already showing
@@ -70,17 +66,7 @@ export function useCurrency() {
       controller.abort();
       window.clearTimeout(timeout);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const setCurrency = (next: Currency) => {
-    setCurrencyState(next);
-    try {
-      localStorage.setItem(MANUAL_KEY, next);
-    } catch {
-      // ignore storage errors (private browsing, etc.)
-    }
-  };
-
-  return { currency, setCurrency };
+  return currency;
 }

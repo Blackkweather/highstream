@@ -828,7 +828,7 @@ const BlogPost = () => {
         <Header />
         <main className="container mx-auto px-4 py-12">
           <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-4">Post Not Found</h1>
             <p className="text-muted-foreground mb-8">The blog post you're looking for doesn't exist.</p>
             <Link to="/blog">
               <Button>
@@ -871,7 +871,7 @@ const BlogPost = () => {
           <article>
             <header className="mb-8">
               <Badge className="mb-4">{currentPost.category}</Badge>
-              <h1 className="text-4xl font-bold mb-6">{currentPost.title}</h1>
+              <h1 className="text-3xl sm:text-4xl font-bold mb-6">{currentPost.title}</h1>
 
               <div className="flex items-center gap-6 text-sm text-muted-foreground mb-8">
                 <div className="flex items-center gap-2">

@@ -168,7 +168,7 @@ export const Footer = () => {
                 {t('footer.copyright')}
             </div>
             
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground sm:gap-x-6">
               <span className="flex items-center gap-1.5"><Lock className="h-3.5 w-3.5 text-primary" /> {t('footer.sslSecured')}</span>
               <span>•</span>
               <span className="flex items-center gap-1.5"><Zap className="h-3.5 w-3.5 text-primary" /> {t('infrastructure.uptime')}</span>

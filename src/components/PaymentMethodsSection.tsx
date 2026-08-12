@@ -1,18 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CreditCard, Banknote, Bitcoin, ArrowRight } from "lucide-react";
+import { Banknote, Bitcoin, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const getPaymentMethods = (t: (key: string) => string) => [
-  {
-    name: "Card payment",
-    logo: "/payement logos/eneba.png",
-    icon: CreditCard,
-    description: t('payment.enebaDesc'),
-    recommended: true,
-    features:[t('payment.enebaFeature1'), t('payment.enebaFeature2'), t('payment.enebaFeature3')],
-    dimension: "w-16 h-16"
-  },
   {
     name: "Wise",
     logo: "/payement logos/wise.png",
@@ -59,21 +50,21 @@ export const PaymentMethodsSection = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4"
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4"
                         data-aos="fade-up">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              {t('payment.title')}
-            </span>
+            {t('payment.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto"
+          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto"
           data-aos="fade-up"
-          data-aos-delay="300">
+          data-aos-delay="150">
            {t('payment.subtitle')}
           </p>
         </div>
 
         {/* Payment Methods */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
+        {/* Column count tracks the number of methods: a 3-col grid holding two
+            cards leaves a visible empty cell on the right. */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-2xl mx-auto">
           {paymentMethods.map((method, index) => {
             const IconComponent = method.icon;
             return (
@@ -81,7 +72,7 @@ export const PaymentMethodsSection = () => {
                             data-aos="fade-left"
               data-aos-delay={index * 200}
                 key={index}
-                className={`bg-card border-border hover:bg-card-hover transition-all duration-300 hover:scale-105 relative ${method.recommended ? 'border-primary shadow-tech-glow' : ''
+                className={`card-lift bg-card border-border hover:bg-card-hover relative ${method.recommended ? 'border-primary shadow-tech-glow' : ''
                   }`}
               >
                 {method.recommended && (
@@ -156,16 +147,6 @@ export const PaymentMethodsSection = () => {
             ))}
           </div>
 
-          <div className="text-center mt-8 p-4 bg-secondary/10 rounded-xl"
-              data-aos="fade-up">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <CreditCard className="w-5 h-5 text-secondary" />
-              <span className="font-semibold text-secondary">{t('payment.recommended')}</span>
-            </div>
-            <p className="text-sm text-muted-foreground">
-               {t('payment.acceptsCards')}
-            </p>
-          </div>
         </div>
       </div>
     </section>

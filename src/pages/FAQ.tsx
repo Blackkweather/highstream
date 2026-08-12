@@ -70,8 +70,8 @@ const FAQ = () => {
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto  w-full ">
           <div className="text-center mb-12">
-            <h1 className="font-bold mb-4" style={{ fontSize: '2.5rem' }}>{t('faq.mainTitle')}</h1>
-            <p className="text-xl text-muted-foreground mb-8">
+            <h1 className="font-bold mb-4 text-3xl sm:text-4xl">{t('faq.mainTitle')}</h1>
+            <p className="text-base sm:text-xl text-muted-foreground mb-8">
               {t('faq.intro')}
             </p>
           </div>
@@ -84,22 +84,24 @@ const FAQ = () => {
                   value={`section-${sectionIndex}`}
                   className="border border-border/30 rounded-lg bg-card/30 px-0"
                 >
-                  <AccordionTrigger className="flex items-center gap-2 px-6 py-4 text-2xl font-bold text-foreground border-b border-border">
+                  <AccordionTrigger className="flex items-center gap-2 px-4 py-4 text-left text-lg font-bold text-foreground border-b border-border sm:px-6 sm:text-2xl">
                     <span>{section.title}</span>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <Accordion type="single" collapsible className="space-y-4 px-6 py-4">
+                    {/* Padding steps down on phones: container px-4 + two levels of
+                        nested accordion padding otherwise eats ~80px of a 360px screen. */}
+                    <Accordion type="single" collapsible className="space-y-4 px-2 py-4 sm:px-6">
                       {section.questions.map((faq, questionIndex) => (
                         <AccordionItem
                           key={questionIndex}
                           value={`section-${sectionIndex}-item-${questionIndex}`}
-                          className="border border-border/20 rounded-lg bg-card/50 px-6"
+                          className="border border-border/20 rounded-lg bg-card/50 px-3 sm:px-6"
                         >
                           <AccordionTrigger className="text-left hover:no-underline">
-                            <h3 className="font-semibold text-foreground" style={{ fontSize: '1.25rem' }}>{faq.question}</h3>
+                            <h3 className="font-semibold text-foreground text-base sm:text-xl">{faq.question}</h3>
                           </AccordionTrigger>
                           <AccordionContent className="text-muted-foreground pt-2">
-                            <div className="prose prose-sm max-w-none" style={{ fontSize: '1rem' }}>
+                            <div className="prose prose-sm max-w-none text-sm sm:text-base">
                               {renderAnswer(faq.answer)}
                             </div>
                           </AccordionContent>

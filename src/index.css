@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Fonts are loaded via <link> in index.html, not @import. A CSS @import is
+   discovered only after this stylesheet is fetched and parsed, which serialises
+   the request and delays first paint; the <link> is in the initial HTML so the
+   preload scanner starts it immediately. */
 
 @tailwind base;
 @tailwind components;
@@ -136,6 +139,54 @@
    Signature utilities
    ========================================================= */
 @layer components {
+  /* Hero height. vh is the fallback; on mobile the URL bar collapses on scroll
+     and vh-based heights jump, so prefer svh (the small, toolbars-visible
+     viewport) wherever it is supported. Kept here rather than as two Tailwind
+     arbitrary classes because Tailwind orders rules by its own sort, not by
+     the order classes appear in the attribute. */
+  .hero-viewport {
+    min-height: 92vh;
+  }
+  @supports (min-height: 1svh) {
+    .hero-viewport {
+      min-height: 92svh;
+    }
+  }
+  /* Card hover. Scaling a card re-rasterises its text (visible blur mid-hover)
+     and nudges neighbours in a grid. A small translate plus a border/shadow
+     shift reads as elevation without touching layout or text crispness.
+     Shadow is tinted to the page hue, never pure black (§4.4). */
+  .card-lift {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.28s ease,
+                box-shadow 0.28s ease,
+                background-color 0.28s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    border-color: hsl(204 100% 55% / 0.38);
+    box-shadow: 0 18px 44px -18px hsl(214 80% 2% / 0.9),
+                0 0 0 1px hsl(204 100% 55% / 0.10),
+                inset 0 1px 0 hsl(204 100% 80% / 0.07);
+  }
+  /* Pressing should feel like the surface gives way. */
+  .card-lift:active {
+    transform: translateY(-1px);
+  }
+  /* The featured plan rests at lg:scale-105. A bare translate on hover would
+     replace that transform and collapse the card back to 1x, so the featured
+     variant re-states the scale inside its own hover transform. */
+  @media (min-width: 1024px) {
+    .card-lift--featured:hover { transform: translateY(-4px) scale(1.05); }
+    .card-lift--featured:active { transform: translateY(-1px) scale(1.05); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-lift:hover,
+    .card-lift:active { transform: none; }
+    .card-lift--featured:hover,
+    .card-lift--featured:active { transform: none; }
+  }
+
   .text-chrome {
     background: var(--chrome);
     -webkit-background-clip: text;

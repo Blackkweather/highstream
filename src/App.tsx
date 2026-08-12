@@ -43,10 +43,14 @@ const AppContent = () =>  {
     const [showIntro, setShowIntro] = useState(() => !sessionStorage.getItem("hs_intro_seen"));
       useEffect(() => {
     AOS.init({
-      duration: 1000, // durée de l'animation en ms
-      easing: 'ease-in-out', // type d'easing
+      duration: 600, // 1000ms lisait comme un fondu paresseux ; 600 reste perceptible sans traîner
+      easing: 'ease-out-cubic', // décélération : l'élément arrive vite puis se pose
       once: true, // animation une seule fois
       mirror: false, // ne pas répéter en scrollant vers le haut
+      offset: 40, // déclenche un peu plus tôt pour que l'élément soit posé quand on le lit
+      // Sans ce disable, AOS pose opacity:0 sur le contenu avant de l'animer.
+      // Pour un visiteur « reduced motion » cela reste un mouvement imposé.
+      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
     });
   }, []);
 

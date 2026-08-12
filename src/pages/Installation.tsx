@@ -16,7 +16,7 @@ const Installation = () => {
       <main className="container mx-auto px-4 py-8">
         <article className="max-w-4xl mx-auto">
           <header className="mb-8">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
               How to Install 8K Player VIP application IPTV on FireStick & Android 2025
             </h1>
             <div className="flex items-center space-x-4 text-muted-foreground mb-6">
@@ -44,7 +44,7 @@ const Installation = () => {
             </div>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Step 1 – Prepare your streaming device</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Step 1 – Prepare your streaming device</h2>
 
               <div className="space-y-6">
                 <div className="border border-border rounded-lg p-6">
@@ -87,7 +87,7 @@ const Installation = () => {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Step 2 – Allow Downloader to install the IPTV 8K Player application</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Step 2 – Allow Downloader to install the IPTV 8K Player application</h2>
 
               <div className="space-y-6">
                 <div className="border border-border rounded-lg p-6">
@@ -121,9 +121,9 @@ const Installation = () => {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6 text-center">If Developer Options were not available in step 2 follow the next steps. otherwise go to step 3 </h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 text-center">If Developer Options were not available in step 2 follow the next steps. otherwise go to step 3 </h2>
               <p className=" mb-4"> If you are unable to locate Developer options in Settings, follow the instructions below to enable using the Downloader app.</p>
-              {/* <h2 className="text-3xl font-bold text-foreground mb-6">Step 3 – Download and Install 8K Player VIP</h2> */}
+              {/* <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Step 3 – Download and Install 8K Player VIP</h2> */}
 
               <div className="space-y-6">
                 <div className="border border-border rounded-lg p-6">
@@ -165,7 +165,7 @@ const Installation = () => {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Step 3 – Download and Install IPTV 8K Player</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Step 3 – Download and Install IPTV 8K Player</h2>
 
               <div className="space-y-6">
                 <div className="border border-border rounded-lg p-6">
@@ -207,7 +207,7 @@ const Installation = () => {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Step 4 – How to configure IPTV 8K Player</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Step 4 – How to configure IPTV 8K Player</h2>
 
               <div className="space-y-6">
                 <div className="border border-border rounded-lg p-6">
@@ -233,7 +233,7 @@ const Installation = () => {
 
             <section className="mb-12">
               <div className="bg-accent/20 border border-accent/30 rounded-lg p-8 text-center">
-                <h2 className="text-3xl font-bold text-foreground mb-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                   Need Help with Installation?
                 </h2>
                 <p className="text-muted-foreground mb-6 text-lg">
@@ -253,7 +253,7 @@ const Installation = () => {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Troubleshooting Tips</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Troubleshooting Tips</h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="border border-border rounded-lg p-6">

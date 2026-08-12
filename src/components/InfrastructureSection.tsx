@@ -35,7 +35,7 @@ const getInfrastructureFeatures = (t: (key: string) => string) => [
 
 const getMetrics = (t: (key: string) => string) => [
     { value: "99.9%", labelKey: "infrastructure.uptime", animation: "fade-right" },
-  { value: "20K+", labelKey: "infrastructure.channels", animation: "fade-right" },
+  { value: "35K+", labelKey: "infrastructure.channels", animation: "fade-right" },
   { value: "4K", labelKey: "infrastructure.quality", animation: "fade-left" },
   { value: "24/7", labelKey: "infrastructure.support", animation: "fade-left" }
 ];
@@ -48,14 +48,14 @@ export const InfrastructureSection = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" 
+          {/* Gradient headings are reserved for the pricing section: when every
+              section header is a gradient, none of them reads as emphasis. */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4"
           data-aos="fade-up">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              {t('infrastructure.title')}
-            </span>
+            {t('infrastructure.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto"
-          data-aos="fade-up" data-aos-delay="300">
+          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto"
+          data-aos="fade-up" data-aos-delay="150">
               {t('infrastructure.subtitle')}
           </p>
         </div>
@@ -67,7 +67,7 @@ export const InfrastructureSection = () => {
             return (
               <Card 
                 key={index}
-                className="bg-card border-border hover:bg-card-hover hover:border-primary/20 transition-all duration-300 hover:scale-105 group"
+                className="card-lift bg-card border-border hover:bg-card-hover group"
                 data-aos={feature.animation} 
                 data-aos-delay={index * 100}  
              >
@@ -76,7 +76,7 @@ export const InfrastructureSection = () => {
                     <IconComponent className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">
-                          {t('infrastructure.globalServers')}
+                          {t(feature.titleKey)}
                   </h3>
                   <p className="text-muted-foreground mb-4 text-sm">
                       {t(feature.descriptionKey)}
@@ -98,10 +98,12 @@ export const InfrastructureSection = () => {
             {metrics.map((metric, index) => (
               <div key={index} className="text-center" 
               data-aos={metric.animation}>
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                {/* These four figures are now the page's only statement of them,
+                    so they carry the display face and tabular figures. */}
+                <div className="font-display text-3xl md:text-4xl font-bold text-primary mb-2 tabular-nums tracking-tight">
                   {metric.value}
                 </div>
-                <div className="text-muted-foreground font-medium">
+                <div className="text-sm sm:text-base text-muted-foreground font-medium">
                   {t(metric.labelKey)}
                 </div>
               </div>

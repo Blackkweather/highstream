@@ -97,14 +97,12 @@ const ReviewsCarousel: React.FC<CustomerReviewsCarouselProps> = ({
     <div className={cn('w-full max-w-7xl mx-auto px-4', className)}>
       {/* Section Header */}
       <div className="text-center  mb-12 mt-12">
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" 
-            data-aos="fade-up" data-aos-delay="200">
-          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            {t('testimonials.title')}
-          </span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4"
+            data-aos="fade-up" data-aos-delay="100">
+          {t('testimonials.title')}
         </h2>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto" 
-        data-aos="fade-up" data-aos-delay="400">
+        <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto"
+        data-aos="fade-up" data-aos-delay="200">
           {/* Real feedback from real customers using HighStream every day */}
           {t('testimonials.subtitle')}
         </p>

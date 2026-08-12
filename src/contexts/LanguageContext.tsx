@@ -69,10 +69,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment Methods
     'payment.title': '100% Secure & Fast Payments',
-    'payment.step1': 'Buy via Eneba / Wise / Crypto',
+    'payment.step1': 'Buy via Wise / Crypto',
     'payment.step2': 'Send receipt (WhatsApp / Telegram)',
     'payment.step3': 'Get access in less than 5 minutes',
-    'payment.recommended': 'Eneba recommended (accepts credit & debit cards)',
 
     // Infrastructure content
     'infrastructure.subtitle': 'Enterprise-grade technology powering millions of streams worldwide',
@@ -96,11 +95,6 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment content
     'payment.subtitle': 'Multiple payment options for your convenience and security',
-    'payment.eneba': 'Eneba',
-    'payment.enebaDesc': 'Credit & Debit Cards',
-    'payment.enebaFeature1': 'Instant payment',
-    'payment.enebaFeature2': 'Global acceptance',
-    'payment.enebaFeature3': 'Secure checkout',
     'payment.wise': 'Wise',
     'payment.wiseDesc': 'Bank Transfer',
     'payment.wiseFeature1': 'Low fees',
@@ -112,13 +106,12 @@ const translations: Record<Language, Record<string, string>> = {
     'payment.cryptoFeature2': 'Ethereum',
     'payment.cryptoFeature3': 'Anonymous',
     'payment.howItWorks': 'How It Works',
-    'payment.step1Title': 'Buy via Eneba / Wise / Crypto',
+    'payment.step1Title': 'Buy via Wise / Crypto',
     'payment.step1Desc': 'Choose your preferred payment method',
     'payment.step2Title': 'Send receipt (WhatsApp / Telegram)',
     'payment.step2Desc': 'Forward payment confirmation to our support',
     'payment.step3Title': 'Get access in less than 5 minutes',
     'payment.step3Desc': 'Receive your login credentials instantly',
-    'payment.acceptsCards': 'Accepts all major credit & debit cards worldwide',
 
     // Pricing content
     'pricing.title': 'Choose Your Perfect Plan',
@@ -134,7 +127,6 @@ const translations: Record<Language, Record<string, string>> = {
     'pricing.feature9': 'Premium Support',
     'pricing.originallyText': 'Originally',
     'pricing.paymentInfo': 'Secure payment processing • Instant activation • 24/7 support',
-    'pricing.creditCards': 'Credit Cards',
     'pricing.bankTransfer': 'Bank Transfer',
     'pricing.cryptocurrency': 'Cryptocurrency',
 
@@ -394,11 +386,6 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment content
     'payment.subtitle': 'Múltiples opciones de pago para tu conveniencia y seguridad',
-    'payment.eneba': 'Eneba',
-    'payment.enebaDesc': 'Tarjetas de Crédito y Débito',
-    'payment.enebaFeature1': 'Pago instantáneo',
-    'payment.enebaFeature2': 'Aceptación global',
-    'payment.enebaFeature3': 'Checkout seguro',
     'payment.wise': 'Wise',
     'payment.wiseDesc': 'Transferencia Bancaria',
     'payment.wiseFeature1': 'Tarifas bajas',
@@ -410,13 +397,12 @@ const translations: Record<Language, Record<string, string>> = {
     'payment.cryptoFeature2': 'Ethereum',
     'payment.cryptoFeature3': 'Anónimo',
     'payment.howItWorks': 'Cómo Funciona',
-    'payment.step1Title': 'Comprar vía Eneba / Wise / Crypto',
+    'payment.step1Title': 'Comprar vía Wise / Crypto',
     'payment.step1Desc': 'Elige tu método de pago preferido',
     'payment.step2Title': 'Enviar recibo (WhatsApp / Telegram)',
     'payment.step2Desc': 'Reenvía la confirmación de pago a nuestro soporte',
     'payment.step3Title': 'Obtener acceso en menos de 5 minutos',
     'payment.step3Desc': 'Recibe tus credenciales de acceso instantáneamente',
-    'payment.acceptsCards': 'Acepta todas las principales tarjetas de crédito y débito mundialmente',
 
     // Pricing content
     'pricing.title': 'Elige Tu Plan Perfecto',
@@ -432,7 +418,6 @@ const translations: Record<Language, Record<string, string>> = {
     'pricing.feature9': 'Soporte Premium',
     'pricing.originallyText': 'Originalmente',
     'pricing.paymentInfo': 'Procesamiento de pagos seguro • Activación instantánea • Soporte 24/7',
-    'pricing.creditCards': 'Tarjetas de Crédito',
     'pricing.bankTransfer': 'Transferencia Bancaria',
     'pricing.cryptocurrency': 'Criptomoneda',
 
@@ -447,10 +432,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment Methods
     'payment.title': 'Pagos 100% Seguros y Rápidos',
-    'payment.step1': 'Comprar vía Eneba / Wise / Crypto',
+    'payment.step1': 'Comprar vía Wise / Crypto',
     'payment.step2': 'Enviar recibo (WhatsApp / Telegram)',
     'payment.step3': 'Obtener acceso en menos de 5 minutos',
-    'payment.recommended': 'Eneba recomendado (acepta tarjetas de crédito y débito)',
 
     // Footer
     'footer.reseller': '¿Quieres ser revendedor? Únete a nuestro programa.',
@@ -707,11 +691,6 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment content
     'payment.subtitle': 'Options de paiement multiples pour votre commodité et sécurité',
-    'payment.eneba': 'Eneba',
-    'payment.enebaDesc': 'Cartes de Crédit et Débit',
-    'payment.enebaFeature1': 'Paiement instantané',
-    'payment.enebaFeature2': 'Acceptation mondiale',
-    'payment.enebaFeature3': 'Checkout sécurisé',
     'payment.wise': 'Wise',
     'payment.wiseDesc': 'Virement Bancaire',
     'payment.wiseFeature1': 'Frais réduits',
@@ -723,13 +702,12 @@ const translations: Record<Language, Record<string, string>> = {
     'payment.cryptoFeature2': 'Ethereum',
     'payment.cryptoFeature3': 'Anonyme',
     'payment.howItWorks': 'Comment Ça Fonctionne',
-    'payment.step1Title': 'Acheter via Eneba / Wise / Crypto',
+    'payment.step1Title': 'Acheter via Wise / Crypto',
     'payment.step1Desc': 'Choisissez votre méthode de paiement préférée',
     'payment.step2Title': 'Envoyer reçu (WhatsApp / Telegram)',
     'payment.step2Desc': 'Transférer la confirmation de paiement à notre support',
     'payment.step3Title': 'Obtenir accès en moins de 5 minutes',
     'payment.step3Desc': 'Recevez vos identifiants de connexion instantanément',
-    'payment.acceptsCards': 'Accepte toutes les principales cartes de crédit et débit dans le monde',
 
     // Pricing content
     'pricing.title': 'Choisissez Votre Plan Parfait',
@@ -745,7 +723,6 @@ const translations: Record<Language, Record<string, string>> = {
     'pricing.feature9': 'Support Premium',
     'pricing.originallyText': 'Originalement',
     'pricing.paymentInfo': 'Traitement de paiement sécurisé • Activation instantanée • Support 24/7',
-    'pricing.creditCards': 'Cartes de Crédit',
     'pricing.bankTransfer': 'Virement Bancaire',
     'pricing.cryptocurrency': 'Cryptomonnaie',
 
@@ -775,10 +752,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment Methods
     'payment.title': 'Paiements 100% Sécurisés et Rapides',
-    'payment.step1': 'Acheter via Eneba / Wise / Crypto',
+    'payment.step1': 'Acheter via Wise / Crypto',
     'payment.step2': 'Envoyer reçu (WhatsApp / Telegram)',
     'payment.step3': 'Obtenir accès en moins de 5 minutes',
-    'payment.recommended': 'Eneba recommandé (accepte cartes de crédit et débit)',
 
     // Footer
     'footer.reseller': 'Voulez-vous devenir revendeur ? Rejoignez notre programme.',
@@ -930,11 +906,6 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment content
     'payment.subtitle': 'Opzioni di pagamento multiple per la tua comodità e sicurezza',
-    'payment.eneba': 'Eneba',
-    'payment.enebaDesc': 'Carte di Credito e Debito',
-    'payment.enebaFeature1': 'Pagamento istantaneo',
-    'payment.enebaFeature2': 'Accettazione globale',
-    'payment.enebaFeature3': 'Checkout sicuro',
     'payment.wise': 'Wise',
     'payment.wiseDesc': 'Bonifico Bancario',
     'payment.wiseFeature1': 'Commissioni basse',
@@ -946,13 +917,12 @@ const translations: Record<Language, Record<string, string>> = {
     'payment.cryptoFeature2': 'Ethereum',
     'payment.cryptoFeature3': 'Anonimo',
     'payment.howItWorks': 'Come Funziona',
-    'payment.step1Title': 'Acquista tramite Eneba / Wise / Crypto',
+    'payment.step1Title': 'Acquista tramite Wise / Crypto',
     'payment.step1Desc': 'Scegli il tuo metodo di pagamento preferito',
     'payment.step2Title': 'Invia ricevuta (WhatsApp / Telegram)',
     'payment.step2Desc': 'Inoltra la conferma di pagamento al nostro supporto',
     'payment.step3Title': 'Ottieni accesso in meno di 5 minuti',
     'payment.step3Desc': 'Ricevi le tue credenziali di accesso istantaneamente',
-    'payment.acceptsCards': 'Accetta tutte le principali carte di credito e debito a livello mondiale',
 
     // Pricing content
     'pricing.title': 'Scegli il Tuo Piano Perfetto',
@@ -968,7 +938,6 @@ const translations: Record<Language, Record<string, string>> = {
     'pricing.feature9': 'Supporto Premium',
     'pricing.originallyText': 'Originariamente',
     'pricing.paymentInfo': 'Elaborazione pagamenti sicura • Attivazione istantanea • Supporto 24/7',
-    'pricing.creditCards': 'Carte di Credito',
     'pricing.bankTransfer': 'Bonifico Bancario',
     'pricing.cryptocurrency': 'Criptovaluta',
 
@@ -1008,10 +977,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment Methods
     'payment.title': 'Pagamenti 100% Sicuri e Veloci',
-    'payment.step1': 'Acquista tramite Eneba / Wise / Crypto',
+    'payment.step1': 'Acquista tramite Wise / Crypto',
     'payment.step2': 'Invia ricevuta (WhatsApp / Telegram)',
     'payment.step3': 'Ottieni accesso in meno di 5 minuti',
-    'payment.recommended': 'Eneba raccomandato (accetta carte di credito e debito)',
 
     // Footer
     'footer.reseller': 'Vuoi diventare rivenditore? Unisciti al nostro programma.',
@@ -1156,10 +1124,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment Methods
     'payment.title': '100% Sichere und Schnelle Zahlungen',
-    'payment.step1': 'Kaufen über Eneba / Wise / Crypto',
+    'payment.step1': 'Kaufen über Wise / Crypto',
     'payment.step2': 'Beleg senden (WhatsApp / Telegram)',
     'payment.step3': 'Zugang in weniger als 5 Minuten erhalten',
-    'payment.recommended': 'Eneba empfohlen (akzeptiert Kredit- und Debitkarten)',
 
     // Testimonials content
     'testimonials.subtitle': 'Echtes Feedback von echten Kunden, die HighStream täglich nutzen',
@@ -1193,11 +1160,6 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment content
     'payment.subtitle': 'Mehrere Zahlungsoptionen für Ihre Bequemlichkeit und Sicherheit',
-    'payment.eneba': 'Eneba',
-    'payment.enebaDesc': 'Kredit- und Debitkarten',
-    'payment.enebaFeature1': 'Sofortige Zahlung',
-    'payment.enebaFeature2': 'Weltweite Akzeptanz',
-    'payment.enebaFeature3': 'Sicherer Checkout',
     'payment.wise': 'Wise',
     'payment.wiseDesc': 'Banküberweisung',
     'payment.wiseFeature1': 'Niedrige Gebühren',
@@ -1209,13 +1171,12 @@ const translations: Record<Language, Record<string, string>> = {
     'payment.cryptoFeature2': 'Ethereum',
     'payment.cryptoFeature3': 'Anonym',
     'payment.howItWorks': 'Wie Es Funktioniert',
-    'payment.step1Title': 'Kaufen über Eneba / Wise / Crypto',
+    'payment.step1Title': 'Kaufen über Wise / Crypto',
     'payment.step1Desc': 'Wählen Sie Ihre bevorzugte Zahlungsmethode',
     'payment.step2Title': 'Beleg senden (WhatsApp / Telegram)',
     'payment.step2Desc': 'Zahlungsbestätigung an unseren Support weiterleiten',
     'payment.step3Title': 'Zugang in weniger als 5 Minuten erhalten',
     'payment.step3Desc': 'Erhalten Sie Ihre Anmeldedaten sofort',
-    'payment.acceptsCards': 'Akzeptiert alle wichtigen Kredit- und Debitkarten weltweit',
 
     // Pricing content
     'pricing.title': 'Wählen Sie Ihren Perfekten Plan',
@@ -1231,7 +1192,6 @@ const translations: Record<Language, Record<string, string>> = {
     'pricing.feature9': 'Premium Support',
     'pricing.originallyText': 'Ursprünglich',
     'pricing.paymentInfo': 'Sichere Zahlungsabwicklung • Sofortige Aktivierung • 24/7 Support',
-    'pricing.creditCards': 'Kreditkarten',
     'pricing.bankTransfer': 'Banküberweisung',
     'pricing.cryptocurrency': 'Kryptowährung',
 
@@ -1393,10 +1353,9 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment Methods
     'payment.title': 'مدفوعات آمنة وسريعة 100%',
-    'payment.step1': 'الشراء عبر Eneba / Wise / Crypto',
+    'payment.step1': 'الشراء عبر Wise / Crypto',
     'payment.step2': 'إرسال الإيصال (واتساب / تلغرام)',
     'payment.step3': 'الحصول على الوصول في أقل من 5 دقائق',
-    'payment.recommended': 'Eneba موصى به (يقبل بطاقات الائتمان والخصم)',
 
     // Footer
     'footer.reseller': 'هل تريد أن تصبح موزعاً؟ انضم إلى برنامجنا.',
@@ -1530,11 +1489,6 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Payment content
     'payment.subtitle': 'خيارات دفع متعددة لراحتك وأمانك',
-    'payment.eneba': 'Eneba',
-    'payment.enebaDesc': 'بطاقات ائتمان وخصم',
-    'payment.enebaFeature1': 'دفع فوري',
-    'payment.enebaFeature2': 'قبول عالمي',
-    'payment.enebaFeature3': 'دفع آمن',
     'payment.wise': 'Wise',
     'payment.wiseDesc': 'تحويل بنكي',
     'payment.wiseFeature1': 'رسوم منخفضة',
@@ -1546,13 +1500,12 @@ const translations: Record<Language, Record<string, string>> = {
     'payment.cryptoFeature2': 'إيثريوم',
     'payment.cryptoFeature3': 'مجهول',
     'payment.howItWorks': 'كيف يعمل',
-    'payment.step1Title': 'اشتر عبر Eneba / Wise / Crypto',
+    'payment.step1Title': 'اشتر عبر Wise / Crypto',
     'payment.step1Desc': 'اختر طريقة الدفع المفضلة لديك',
     'payment.step2Title': 'أرسل الإيصال (واتساب / تلغرام)',
     'payment.step2Desc': 'أرسل تأكيد الدفع إلى دعمنا',
     'payment.step3Title': 'احصل على الوصول في أقل من 5 دقائق',
     'payment.step3Desc': 'استلم بيانات تسجيل الدخول فوراً',
-    'payment.acceptsCards': 'يقبل جميع بطاقات الائتمان والخصم الرئيسية عالمياً',
 
     // Pricing content
     'pricing.title': 'اختر خطتك المثالية',
@@ -1568,7 +1521,6 @@ const translations: Record<Language, Record<string, string>> = {
     'pricing.feature9': 'دعم مميز',
     'pricing.originallyText': 'في الأصل',
     'pricing.paymentInfo': 'معالجة دفع آمنة • تفعيل فوري • دعم 24/7',
-    'pricing.creditCards': 'بطاقات ائتمان',
     'pricing.bankTransfer': 'تحويل بنكي',
     'pricing.cryptocurrency': 'عملة مشفرة',
 

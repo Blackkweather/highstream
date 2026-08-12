@@ -226,55 +226,33 @@ export const PricingSection = () => {
   const { t } = useLanguage();
   const [selectedTab, setSelectedTab] = useState("one");
   const navigate = useNavigate();
-  const { currency, setCurrency } = useCurrency();
-  const symbol = CURRENCY_SYMBOL[currency];
+  const symbol = CURRENCY_SYMBOL[useCurrency()];
 
   return (
-    <section className="py-20 bg-section-gradient">
+    <section className="py-14 sm:py-20 bg-section-gradient">
       <div className="container mx-auto px-4 lg:px-8"  id="pricing-section">
-        <div className="text-center mb-20 full-width flex flex-col items-center"
+        <div className="text-center mb-12 sm:mb-20 full-width flex flex-col items-center"
         data-aos="fade-up" >
            <img src="/all_devices.webp" alt="All devices supported" />
         </div>
-        <div className="text-center mb-16" >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4" >
+        <div className="text-center mb-10 sm:mb-16" >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4" >
             Choose Your{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Perfect Plan
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto">
            {t('pricing.subtitle')}
           </p>
         </div>
 
-        {/* Currency toggle */}
-        <div className="flex justify-center mb-8">
-          <div className="glass inline-flex rounded-full p-1" role="group" aria-label="Currency">
-            {(["USD", "EUR"] as const).map((c) => (
-              <button
-                key={c}
-                type="button"
-                onClick={() => setCurrency(c)}
-                aria-pressed={currency === c}
-                className={`h-9 rounded-full px-4 text-sm font-semibold transition-colors ${
-                  currency === c
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Tabs */}
-        <div className="flex justify-center gap-4 mb-16">
+        <div className="flex flex-wrap justify-center gap-2 mb-12 sm:gap-4 sm:mb-16">
           {pricingTabs.map((tab,index) => (
             <button
               key={tab.key}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-200
+              className={`px-4 py-2.5 text-sm rounded-full font-semibold transition-all duration-200 sm:px-6 sm:text-base
                 ${selectedTab === tab.key
                   ? "bg-primary text-primary-foreground shadow"
                   : "bg-card text-foreground hover:bg-primary/10"}`}
@@ -294,7 +272,7 @@ export const PricingSection = () => {
             <Card
               data-aos={plan.animation}
               key={index}
-              className={`relative bg-card border-border hover:bg-card-hover transition-all duration-300 hover:scale-105 ${plan.popular ? 'border-primary shadow-tech-glow lg:scale-105' : ''
+              className={`card-lift relative bg-card border-border hover:bg-card-hover ${plan.popular ? 'card-lift--featured border-primary shadow-tech-glow lg:scale-105' : ''
                 }`}
             >
               {plan.popular && (

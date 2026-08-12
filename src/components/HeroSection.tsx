@@ -16,15 +16,8 @@ export const HeroSection = () => {
     return () => window.removeEventListener('resize', checkScreen);
   }, []);
 
-  const stats = [
-    { value: '99.9%', label: t('infrastructure.uptime') },
-    { value: '35K+', label: t('infrastructure.channels') },
-    { value: '4K', label: t('infrastructure.quality') },
-    { value: '24/7', label: t('infrastructure.support') },
-  ];
-
   return (
-    <section className="relative flex min-h-[92vh] w-full items-center justify-center overflow-hidden">
+    <section className="hero-viewport relative flex w-full items-center justify-center overflow-hidden">
       {/* Layered cinematic background */}
       <div
         className="absolute inset-0 opacity-[0.18] bg-cover bg-center"
@@ -52,7 +45,7 @@ export const HeroSection = () => {
 
           {/* Headline */}
           <h1
-            className="font-display text-4xl font-bold leading-[1.05] md:text-6xl lg:text-7xl"
+            className="font-display text-3xl font-bold leading-[1.1] [overflow-wrap:anywhere] sm:text-4xl sm:leading-[1.05] md:text-6xl lg:text-7xl"
             data-aos="fade-up"
           >
             <span className="text-foreground">{t('hero.title')}</span>
@@ -60,7 +53,7 @@ export const HeroSection = () => {
 
           {/* Subtitle */}
           <p
-            className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
+            className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg md:text-xl"
             data-aos="fade-up"
             data-aos-delay="150"
           >
@@ -69,13 +62,13 @@ export const HeroSection = () => {
 
           {/* CTAs */}
           <div
-            className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
+            className="mt-10 flex w-full max-w-sm flex-col items-stretch gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:items-center sm:gap-4"
             data-aos="fade-up"
             data-aos-delay="300"
           >
             <Button
               size="lg"
-              className="btn-sheen h-14 rounded-full bg-electric px-8 text-base font-semibold text-primary-foreground shadow-glow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-glow-lg"
+              className="btn-sheen h-14 w-full rounded-full bg-electric px-8 text-base font-semibold text-primary-foreground shadow-glow-md transition-all duration-300 hover:scale-[1.03] hover:shadow-glow-lg sm:w-auto"
               onClick={() => {
                 const pricingSection = document.getElementById('pricing-section');
                 if (pricingSection) pricingSection.scrollIntoView({ behavior: 'smooth' });
@@ -88,7 +81,7 @@ export const HeroSection = () => {
             <Button
               variant="outline"
               size="lg"
-              className="glass h-14 rounded-full border-primary/30 px-8 text-base font-semibold text-foreground transition-all duration-300 hover:scale-[1.03] hover:border-primary/60 hover:bg-primary/10"
+              className="glass h-14 w-full rounded-full border-primary/30 px-8 text-base font-semibold text-foreground transition-all duration-300 hover:scale-[1.03] hover:border-primary/60 hover:bg-primary/10 sm:w-auto"
               onClick={openWhatsApp}
             >
               <MessageCircle className="mr-2 h-5 w-5" />
@@ -96,19 +89,11 @@ export const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Trust chips */}
-          <div
-            className="mt-14 grid w-full max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4"
-            data-aos="fade-up"
-            data-aos-delay="450"
-          >
-            {stats.map((s, i) => (
-              <div key={i} className="glass rounded-2xl px-4 py-4 text-center transition-transform duration-300 hover:-translate-y-1">
-                <div className="font-display text-2xl font-bold text-electric md:text-3xl">{s.value}</div>
-                <div className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">{s.label}</div>
-              </div>
-            ))}
-          </div>
+          {/* The 99.9% / 35K+ / 4K / 24/7 stat row that used to sit here is the
+              same four figures InfrastructureSection already renders as its
+              metrics bar. Repeating them in the hero pushed the CTAs toward the
+              fold on phones and spent the page's strongest moment on a claim
+              that gets made properly further down. */}
         </div>
       </div>
 
